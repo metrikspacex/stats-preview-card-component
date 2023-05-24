@@ -1,0 +1,30 @@
+{
+  "author": {
+    "email": "metrikspacex@gmail.com",
+    "name": "Matthew Mason",
+    "url": "https://github.com/metrikspacex"
+  },
+  "description": "Frontend Mentor Challenge | Stats preview card component",
+  "devDependencies": {
+    "concurrently": "^8.0.1",
+    "serve": "^14.2.0",
+    "typescript": "^5.2.0-dev.20230524"
+  },
+  "homepage": "https://metrikspacex.github.io/stats-preview-card-component",
+  "keywords": [
+    "frontend mentor challenge",
+    "stats preview card component"
+  ],
+  "license": "ISC",
+  "name": "stats-preview-card-component",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/metrikspacex/stats-preview-card-component"
+  },
+  "scripts": {
+    "dev": "concurrently --kill-others \"npm run serve\" \"npm run watch\"",
+    "serve": "serve public/",
+    "watch": "tsc --watch"
+  },
+  "version": "1.0.0"
+}
