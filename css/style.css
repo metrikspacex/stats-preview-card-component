@@ -1,0 +1,212 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Global */
+  --bg: #0a0c1c;
+  --tc: #ffffff;
+
+  /* Header */
+  --header-bg: #ab5cdb;
+
+  /* Content */
+  --content-bg: #1b1937;
+  --content-insights-tc: #ab5cdb;
+  --content-tc: #ffffff;
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: var(--tc);
+  font-family: "Inter";
+  font-size: 10px;
+  font-synthesis: none;
+  font-weight: 400;
+  line-height: 1.5;
+  text-rendering: optimizelegibility;
+  text-size-adjust: 100%;
+}
+
+:root[data-theme="dark"] {
+  /* Global */
+  --bg: #0a0c1c;
+  --tc: #ffffff;
+
+  /* Header */
+  --header-bg: #ab5cdb;
+
+  /* Content */
+  --content-bg: #1b1937;
+  --content-insights-tc: #ab5cdb;
+  --content-tc: #ffffff;
+}
+
+:root[data-theme="light"] {
+  /* Global */
+  --bg: #0a0c1c;
+  --tc: #ffffff;
+
+  /* Header */
+  --header-bg: #ab5cdb;
+
+  /* Content */
+  --content-bg: #1b1937;
+  --content-insights-tc: #ab5cdb;
+  --content-tc: #ffffff;
+}
+
+body {
+  align-content: center;
+  background-color: var(--bg);
+  display: grid;
+  grid-template-areas:
+    "header"
+    "content";
+  grid-template-columns: 1fr;
+  grid-template-rows: 24rem max-content;
+  min-height: 100vh;
+}
+
+/* Header */
+div.header {
+  background-color: var(--header-bg);
+  border-radius: 0.8rem 0.8rem 0 0;
+  grid-area: header;
+  margin: 0 auto;
+  max-width: 32.7rem;
+}
+
+div.header > picture {
+  display: block;
+}
+
+div.header > picture > img {
+  display: block;
+  height: 24rem;
+  max-width: 100%;
+  mix-blend-mode: multiply;
+  opacity: 0.75;
+}
+
+/* Content */
+div.content {
+  background-color: var(--content-bg);
+  border-radius: 0 0.8rem 0.8rem;
+  color: var(--content-tc);
+  grid-area: content;
+  margin: 0 auto;
+  max-width: 32.7rem;
+  padding: 3.2rem 3.1rem;
+}
+
+div.content > h1 {
+  font-size: 2.8rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3.2rem;
+  margin-bottom: 1.6rem;
+  margin-top: 0.8rem;
+  text-align: center;
+}
+
+div.content > h1 > span {
+  color: var(--content-insights-tc);
+}
+
+div.content > h1 + p {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.5rem;
+  margin-bottom: 4rem;
+  mix-blend-mode: normal;
+  opacity: 0.75;
+  text-align: center;
+}
+
+div.content > h1 + p + div {
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 2.4rem;
+}
+
+div.content-highlights {
+  margin-bottom: 0.2rem;
+}
+
+div.content-highlights > h1 {
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.9rem;
+  text-align: center;
+}
+
+div.content-highlights > h1 + h2 {
+  font-family: "Lexend Deca";
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  line-height: 2.5rem;
+  mix-blend-mode: normal;
+  opacity: 0.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/**
+ * Not being able to nest things in `css` sucks.
+ */
+@media (width >= 1200px) {
+  body {
+    grid-template-areas: "content header";
+    grid-template-columns: max-content 54rem;
+    grid-template-rows: 44.6rem;
+    justify-content: center;
+  }
+  div.header {
+    border-radius: 0 0.8rem 0.8rem 0;
+    max-width: 57rem;
+  }
+  div.header > picture > img {
+    height: 44.6rem;
+  }
+
+  div.content {
+    border-radius: 0.8rem 0 0 0.8rem;
+    padding: 7.1rem 0 5.9rem 0;
+    max-width: 57rem;
+  }
+  div.content > h1 {
+    font-size: 3.6rem;
+    line-height: 4rem;
+    margin-bottom: 2.5rem;
+    margin-left: 7.2rem;
+    margin-right: 9.5rem;
+    margin-top: 0;
+    text-align: left;
+  }
+  div.content > h1 + p {
+    margin-bottom: 7.2rem;
+    margin-left: 7.15rem;
+    margin-right: 12.4rem;
+    text-align: left;
+  }
+  div.content > h1 + p + div {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 7.15rem;
+    margin-right: 14.7rem;
+    row-gap: 0;
+  }
+}
